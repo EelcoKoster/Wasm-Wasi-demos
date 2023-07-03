@@ -1,0 +1,16 @@
+spin_manifest_version = "1"
+authors = ["Eelco Koster <eelco.koster@gmail.com>"]
+description = "Demo Spin application"
+name = "hello wasm"
+trigger = { type = "http", base = "/" }
+version = "0.1.0"
+
+[[component]]
+id = "hello-wasm"
+source = "dotnet/bin/debug/net7.0/SpinApp.wasm"
+files = [{ source = "", destination = "/." }]
+#files = ["test.txt"]
+#allowed_http_hosts = [ "google.com" ]
+[component.trigger]
+route = "/..."
+executor = { type = "wagi" }

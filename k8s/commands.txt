@@ -1,0 +1,20 @@
+
+Login to ACR again:
+az acr login -n eelcowasmacr
+
+Build and push container:
+docker build . -t eelcowasmacr.azurecr.io/spin-in-k8s:latest
+docker push eelcowasmacr.azurecr.io/spin-in-k8s:latest
+
+
+Deploy to K8S
+
+ kubectl apply -f .\spin-in-k8s.yml
+
+Add service to get access outside
+
+ kubectl apply -f .\service.yml
+
+Show service/ip
+
+ kubectl get svc

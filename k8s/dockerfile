@@ -1,0 +1,3 @@
+FROM scratch
+COPY ./bin/Release/net7.0/WasmContainer.wasm /WasmContainer.wasm
+COPY ./spin.toml .
